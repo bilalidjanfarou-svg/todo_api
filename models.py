@@ -9,16 +9,9 @@ class Todo(Base):
     description = Column(String, default="")
     completed = Column(Boolean, default=False)
 
-class Todo(Base):
-    __tablename__ = "todo"
-
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String,index=True)
-    description = Column(String, default="")
-    completed = Column(Boolean, default=False)
-
 class User(Base):
-    __tablename__ ="user"
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    hashed_password =Column(String)
+    username = Column(String, unique=True, index=True)
+    hashed_password = Column(String)
