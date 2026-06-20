@@ -15,6 +15,9 @@ class TodoResponse(BaseModel):
     title: str
     description: str
     completed: bool
+class Config:
+    from_attributes = True
 
-    class Config:
-        from_attributes = True
+class UserCreate(BaseModel):
+    username: str
+    password: str
